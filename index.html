@@ -1,0 +1,65 @@
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<header>
+  <div class="logo">VARENO <span>وارنو</span></div>
+  <button onclick="openCart()">🛒 سبد (<b id="cartCount">0</b>)</button>
+</header>
+
+<section class="hero">
+  <div>
+    <small>VARENO MEN'S BOUTIQUE</small>
+    <h1>استایل تو، امضای تو</h1>
+    <p>پوشاک مردانه شیک و خاص</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=85">
+</section>
+
+<section>
+  <h2>محصولات</h2>
+  <div id="products"></div>
+</section>
+
+<div id="cart" class="modal">
+  <div class="box">
+    <button onclick="closeCart()">✕</button>
+    <h2>سبد خرید</h2>
+
+    <div id="cartItems"></div>
+
+    <h3>
+      جمع:
+      <span id="total">0</span>
+      ریال
+    </h3>
+
+    <button onclick="order()">ادامه سفارش</button>
+  </div>
+</div>
+
+<div id="orderBox" class="modal">
+  <div class="box">
+    <button onclick="closeOrder()">✕</button>
+
+    <h2>اطلاعات سفارش</h2>
+
+    <input id="name" placeholder="نام و نام خانوادگی">
+
+    <input id="phone" placeholder="شماره موبایل">
+
+    <input id="province" placeholder="استان">
+
+    <input id="city" placeholder="شهر">
+
+    <input id="postal_code" placeholder="کد پستی">
+
+    <textarea id="address" placeholder="آدرس کامل"></textarea>
+
+    <select id="shipping">
+      <option value="پست">پست</option>
+      <option value="تیپاکس">تیپاکس</option>
+    </select>
+
+    <button onclick="submitOrder()">ثبت سفارش</button>
+  </div>
+</div>
